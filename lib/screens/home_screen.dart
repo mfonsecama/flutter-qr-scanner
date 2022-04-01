@@ -14,7 +14,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Historial'),
+        title: const Text('Historial'),
         elevation: 0,
         actions: [
           IconButton(
@@ -22,12 +22,12 @@ class HomeScreen extends StatelessWidget {
                 Provider.of<ScanListProvider>(context, listen: false)
                     .deleteAllScans();
               },
-              icon: Icon(Icons.delete_forever))
+              icon: const Icon(Icons.delete_forever))
         ],
       ),
-      body: _HomePageBody(),
-      bottomNavigationBar: CustomNavigationBar(),
-      floatingActionButton: ScanButton(),
+      body: const _HomePageBody(),
+      bottomNavigationBar: const CustomNavigationBar(),
+      floatingActionButton: const ScanButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
@@ -46,13 +46,13 @@ class _HomePageBody extends StatelessWidget {
     switch (currentIndex) {
       case 0:
         scanListProvider.loadScansByType('geo');
-        return MapsScreen();
+        return const MapsScreen();
       case 1:
         scanListProvider.loadScansByType('http');
-        return UrlsScreen();
+        return const UrlsScreen();
       default:
         scanListProvider.loadScansByType('geo');
-        return MapsScreen();
+        return const MapsScreen();
     }
   }
 }

@@ -32,7 +32,7 @@ class ScanTiles extends StatelessWidget {
           ),
           title: Text(scans[index].value),
           subtitle: Text('ID: ${scans[index].id}'),
-          trailing: Icon(
+          trailing: const Icon(
             Icons.keyboard_arrow_right,
             color: Colors.grey,
           ),
